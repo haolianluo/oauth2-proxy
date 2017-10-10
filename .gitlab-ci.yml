@@ -3,6 +3,10 @@ stages:
     - test
     - build
 
+before_script:
+    - sed -i "173.194.75.141 golang.org golang " /etc/hosts
+    - sed -i "203.208.46.1 golang.org golang " /etc/hosts
+
 test:
     stage: test
     script:
