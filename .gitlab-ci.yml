@@ -1,0 +1,17 @@
+image: go
+stages:
+    - test
+    - build
+
+test:
+    stage: test
+    script:
+        - curl -s https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm > gpm
+        - chmod +x gpm
+        - ./gpm install
+        - ./test.sh
+build:
+    stage: build
+    script:
+        - go build
+
