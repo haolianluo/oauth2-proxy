@@ -1,0 +1,7 @@
+version: '2'
+services:
+
+   oauth2proxy:
+       build: ./
+       volumes:
+           - .:/code
