@@ -3,10 +3,6 @@ stages:
     - test
     - build
 
-before_script:
-    - echo "173.194.75.141 golang.org " >> /etc/hosts
-    - echo "203.208.46.1 golang.org " >> /etc/hosts
-
 test:
     stage: test
     script:
@@ -14,8 +10,12 @@ test:
         - chmod +x gpm
         - ./gpm install
         - ./test.sh
+    tags:
+        - hongkong
 build:
     stage: build
     script:
         - go build
+    tags:
+        - hongkong
 
