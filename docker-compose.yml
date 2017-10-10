@@ -3,5 +3,8 @@ services:
 
    oauth2proxy:
        build: ./
+       environment:
+           GOPATH: /work
        volumes:
-           - .:/code
+           - .:/work/src/github.com/bitly/oauth2_proxy
+       working_dir: /work/src/github.com/bitly/oauth2_proxy
