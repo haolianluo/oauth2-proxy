@@ -27,6 +27,8 @@ build:
         - chmod +x gpm
         - ./gpm install
         - env GOOS=linux GOARCH=386 go build -o $CI_PROJECT_PATH/oauth2_proxy
+        - cd $CI_PROJECT_PATH
+        - ls
     artifacts:
       expire_in: 60 mins
       untracked: true
