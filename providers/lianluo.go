@@ -1,6 +1,7 @@
 package providers
 
 import (
+	"errors"
 	"log"
 	"net/http"
 	"net/url"
@@ -55,7 +56,7 @@ func (p *LianluoProvider) GetEmailAddress(s *SessionState) (string, error) {
 		return "", err
 	}
 	if json.Get("verification").Get("is_email_verified").MustString() != "1" {
-		return "", error.New("unknown")
+		return "", errors.New("unknown")
 	}
 	return json.Get("email").String()
 }
