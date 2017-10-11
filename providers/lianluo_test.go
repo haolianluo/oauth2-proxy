@@ -29,7 +29,7 @@ func testLianluoProvider(hostname string) *LianluoProvider {
 
 func testLianluoBackend(payload string) *httptest.Server {
 	path := "/account/v1/users"
-	query := "access_token=imaginary_access_token"
+	query := "access_token=imaginary_access_token&expand=verification"
 
 	return httptest.NewServer(http.HandlerFunc(
 		func(w http.ResponseWriter, r *http.Request) {
