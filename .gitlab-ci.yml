@@ -26,7 +26,11 @@ build:
         - curl -s https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm > gpm
         - chmod +x gpm
         - ./gpm install
-        - go build
+        - env GOOS=linux GOARCH=386 go build -o build/oauth2_proxy-linux-x86 -i ./
+    artifacts:
+      expire_in: 60 mins
+      paths:
+        - build/
     tags:
         - hongkong
 
