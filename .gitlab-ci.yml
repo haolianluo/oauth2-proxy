@@ -30,9 +30,10 @@ build:
         - ls build
     artifacts:
       expire_in: 60 mins
+      untracked: true
       name: "oauth2-proxy-linux-x86"
       paths:
-        - build
+        - build/
     tags:
         - hongkong
 
