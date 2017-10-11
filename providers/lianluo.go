@@ -57,5 +57,5 @@ func (p *LianluoProvider) GetEmailAddress(s *SessionState) (string, error) {
 	if json.Get("verification").Get("is_email_verified").MustString() != "1" {
 		return "", err
 	}
-	return json.Get("email").String(), err
+	return json.Get("email").String()
 }
