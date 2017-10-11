@@ -4,8 +4,9 @@ import (
 	"log"
 	"net/http"
 	"net/url"
-	"github.com/bitly/oauth2_proxy/api"
 	"errors"
+
+	"github.com/bitly/oauth2_proxy/api"
 )
 
 type LianluoProvider struct {
