@@ -76,7 +76,7 @@ func TestLianluoProviderOverrides(t *testing.T) {
 	assert.Equal(t, "Lianluo", p.Data().ProviderName)
 	assert.Equal(t, "https://mops-ucenter.lianluo.com/oauth2/auth",
 		p.Data().LoginURL.String())
-	assert.Equal(t, "https://mops-api.lianluo.com.com/account/v1/tokens",
+	assert.Equal(t, "https://mops-api.lianluo.com/account/v1/tokens",
 		p.Data().RedeemURL.String())
 	assert.Equal(t, "https://mops-api.lianluo.com/account/v1/users",
 		p.Data().ValidateURL.String())
