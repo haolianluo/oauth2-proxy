@@ -54,5 +54,8 @@ func (p *LianluoProvider) GetEmailAddress(s *SessionState) (string, error) {
 		log.Printf("failed making request %s", err)
 		return "", err
 	}
-	return json.Get("email").String()
+	if json.Get("verification").Get("is_email_verified").String() != "1" {
+		return "", err
+	}
+	return json.Get("email").String(), err
 }
