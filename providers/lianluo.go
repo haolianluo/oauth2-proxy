@@ -6,6 +6,7 @@ import (
 	"net/url"
 
 	"github.com/bitly/oauth2_proxy/api"
+	"fmt"
 )
 
 type LianluoProvider struct {
@@ -55,7 +56,7 @@ func (p *LianluoProvider) GetEmailAddress(s *SessionState) (string, error) {
 		return "", err
 	}
 	if json.Get("verification").Get("is_email_verified").MustString() != "1" {
-		return "", error.New("unknown")
+		return "", fmt.Errorf("error %q", "unknown")
 	}
 	return json.Get("email").String()
 }
