@@ -84,7 +84,7 @@ func TestLianluoProviderOverrides(t *testing.T) {
 }
 
 func TestLianluoProviderGetEmailAddress(t *testing.T) {
-	b := testLianluoBackend("{\"email\": \"michael.bland@gsa.gov\",\"verification\":{\"is_email_verified\":\"1\"}}")
+	b := testLianluoBackend("{\"email\": \"michael.bland@gsa.gov\",\"verification\":{\"is_email_verified\":1}}")
 	defer b.Close()
 
 	b_url, _ := url.Parse(b.URL)
