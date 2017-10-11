@@ -4,7 +4,7 @@ stages:
     - build
 
 before_script:
-    - mkdir ~/src/github.com/bitly/oauth2_proxy
+    - mkdir -p ~/src/github.com/bitly/oauth2_proxy
     - cp -r . ~/src/github.com/bitly/oauth2_proxy
     - cd ~/src/github.com/bitly/oauth2_proxy
 test:
