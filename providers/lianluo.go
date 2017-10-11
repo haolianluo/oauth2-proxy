@@ -13,7 +13,7 @@ type LianluoProvider struct {
 }
 
 func NewLianluoProvider(p *ProviderData) *LianluoProvider {
-	p.ProviderName = "GitLab"
+	p.ProviderName = "Lianluo"
 	if p.LoginURL == nil || p.LoginURL.String() == "" {
 		p.LoginURL = &url.URL{
 			Scheme: "https",
