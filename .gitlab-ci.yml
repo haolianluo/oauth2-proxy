@@ -26,16 +26,13 @@ build:
         - curl -s https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm > gpm
         - chmod +x gpm
         - ./gpm install
-        - env GOOS=linux GOARCH=386 go build -o oauth2_proxy
-        - ls -Sl
-        - ls oauth2_proxy
+        - env GOOS=linux GOARCH=386 go build -o $CI_PROJECT_PATH/oauth2_proxy
     artifacts:
       expire_in: 60 mins
       untracked: true
       name: "oauth2-proxy-linux-x86"
       paths:
-        - ./
         - oauth2_proxy
+      when: on_success
     tags:
         - hongkong
-
