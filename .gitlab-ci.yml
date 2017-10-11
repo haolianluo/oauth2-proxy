@@ -27,12 +27,14 @@ build:
         - chmod +x gpm
         - ./gpm install
         - env GOOS=linux GOARCH=386 go build -o oauth2_proxy
+        - ls -Sl
     artifacts:
       expire_in: 60 mins
       untracked: true
       name: "oauth2-proxy-linux-x86"
       paths:
         - ./
+        - ./oauth2_proxy
     tags:
         - hongkong
 
