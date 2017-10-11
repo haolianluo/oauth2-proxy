@@ -44,7 +44,7 @@ func NewLianluoProvider(p *ProviderData) *LianluoProvider {
 func (p *LianluoProvider) GetEmailAddress(s *SessionState) (string, error) {
 
 	req, err := http.NewRequest("GET",
-		p.ValidateURL.String()+"?access_token="+s.AccessToken, nil)
+		p.ValidateURL.String()+"?access_token="+s.AccessToken+"&expand=verification", nil)
 	if err != nil {
 		log.Printf("failed building request %s", err)
 		return "", err
@@ -54,7 +54,7 @@ func (p *LianluoProvider) GetEmailAddress(s *SessionState) (string, error) {
 		log.Printf("failed making request %s", err)
 		return "", err
 	}
-	if json.Get("verification").Get("is_email_verified").String() != "1" {
+	if json.Get("verification").Get("is_email_verified").MustString() != "1" {
 		return "", err
 	}
 	return json.Get("email").String(), err
