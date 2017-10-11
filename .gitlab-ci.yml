@@ -23,6 +23,9 @@ build:
     variables:
         GOPATH: /root
     script:
+        - curl -s https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm > gpm
+        - chmod +x gpm
+        - ./gpm install
         - go build
     tags:
         - hongkong
