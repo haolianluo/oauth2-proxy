@@ -29,7 +29,7 @@ func testLianluoProvider(hostname string) *LianluoProvider {
 
 func testLianluoBackend(payload string) *httptest.Server {
 	path := "/account/v1/users"
-	query := "access_token=imaginary_access_token&expand=verification"
+	query := "access_token=imaginary_access_token"
 
 	return httptest.NewServer(http.HandlerFunc(
 		func(w http.ResponseWriter, r *http.Request) {
@@ -84,7 +84,7 @@ func TestLianluoProviderOverrides(t *testing.T) {
 }
 
 func TestLianluoProviderGetEmailAddress(t *testing.T) {
-	b := testLianluoBackend("{\"email\": \"michael.bland@gsa.gov\"}")
+	b := testLianluoBackend("{\"email\": \"michael.bland@gsa.gov\",\"verification\":{\"is_email_verified\":\"1\"}}")
 	defer b.Close()
 
 	b_url, _ := url.Parse(b.URL)
