@@ -10,7 +10,7 @@ before_script:
 test:
     stage: test
     variables:
-        GOPATH: ~/
+        GOPATH: ~
     script:
         - curl -s https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm > gpm
         - chmod +x gpm
@@ -21,7 +21,7 @@ test:
 build:
     stage: build
     variables:
-        GOPATH: ~/
+        GOPATH: ~
     script:
         - go build
     tags:
