@@ -27,7 +27,7 @@ build:
         - chmod +x gpm
         - ./gpm install
         - env GOOS=linux GOARCH=386 go build -o build/oauth2_proxy
-        - ls
+        - ls build
     artifacts:
       expire_in: 60 mins
       name: "oauth2-proxy-linux-x86"
