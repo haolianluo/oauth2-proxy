@@ -112,10 +112,11 @@ func getTemplates() *template.Template {
 	<div class="signin center">
 	<form method="GET" action="{{.ProxyPrefix}}/start">
 	<input type="hidden" name="rd" value="{{.Redirect}}">
+	<h2>访问认证</h2>
 	{{ if .SignInMessage }}
 	<p>{{.SignInMessage}}</p>
 	{{ end}}
-	<button type="submit" class="btn">使用 联络ID 登录/button><br/>
+	<button type="submit" class="btn">使用 联络ID 登录</button><br/>
 	</form>
 	</div>
 
