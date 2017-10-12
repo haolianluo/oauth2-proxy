@@ -115,7 +115,7 @@ func getTemplates() *template.Template {
 	{{ if .SignInMessage }}
 	<p>{{.SignInMessage}}</p>
 	{{ end}}
-	<button type="submit" class="btn">Sign in with a {{.ProviderName}} Account</button><br/>
+	<button type="submit" class="btn">使用 联络ID 登录/button><br/>
 	</form>
 	</div>
 
@@ -123,6 +123,7 @@ func getTemplates() *template.Template {
 	<div class="signin">
 	<form method="POST" action="{{.ProxyPrefix}}/sign_in">
 		<input type="hidden" name="rd" value="{{.Redirect}}">
+	    <h2>访问认证</h2>
 		<label for="username">Username:</label><input type="text" name="username" id="username" size="10"><br/>
 		<label for="password">Password:</label><input type="password" name="password" id="password" size="10"><br/>
 		<button type="submit" class="btn">Sign In</button>

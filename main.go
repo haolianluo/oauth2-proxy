@@ -109,7 +109,7 @@ func main() {
 
 	if len(opts.EmailDomains) != 0 && opts.AuthenticatedEmailsFile == "" {
 		if len(opts.EmailDomains) > 1 {
-			oauthproxy.SignInMessage = fmt.Sprintf("Authenticate using one of the following domains: %v", strings.Join(opts.EmailDomains, ", "))
+			oauthproxy.SignInMessage = fmt.Sprintf("允许认证的域: %v", strings.Join(opts.EmailDomains, ", "))
 		} else if opts.EmailDomains[0] != "*" {
 			oauthproxy.SignInMessage = fmt.Sprintf("Authenticate using %v", opts.EmailDomains[0])
 		}
